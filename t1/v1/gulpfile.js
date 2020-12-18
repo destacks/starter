@@ -16,7 +16,7 @@ gulp.task("clean", () => {
 });
 
 const getContext = file => {
-    const ctx = `${path.dirname(file.path)}/context.json`;
+    const ctx = `${path.dirname(file.path)}/ctx.json`;
     if (fs.existsSync(ctx)) {
         return JSON.parse(fs.readFileSync(ctx));
     } else {
