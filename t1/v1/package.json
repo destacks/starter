@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/destacks/starter/issues"
   },
-  "homepage": "https://github.com/destacks/starter#readme"
+  "homepage": "https://github.com/destacks/starter#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }
