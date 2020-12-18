@@ -8,6 +8,7 @@ const nunjucksRender = require("gulp-nunjucks-render");
 
 const src = "src/"
 const dest = "public";
+const sharedTemplates = "src/shared/templates";
 
 gulp.task("clean", () => {
     return del(`${dest}/**`, {
@@ -29,7 +30,12 @@ gulp.task("html", () => {
     return gulp.src(`${src}**/index.njk`)
         .pipe(data(getContext))
         .pipe(nunjucksRender({
-            path: `${src}`
+            path: sharedTemplates,
+            envOptions: {
+                trimBlocks: true,
+                lstripBlocks: true,
+                noCache: true
+            }
         }))
         .pipe(gulp.dest(dest));
 });
