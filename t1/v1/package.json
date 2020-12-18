@@ -27,7 +27,6 @@
     "live-server": "^1.2.1",
     "nodemon": "^2.0.6",
     "normalize.css": "^8.0.1",
-    "nunjucks": "^3.2.2",
-    "nunjucks-cli": "^1.0.0"
+    "nunjucks": "^3.2.2"
   }
 }
