@@ -9,6 +9,7 @@ const data = require("gulp-data");
 const del = require("del");
 const glob = require("glob");
 const gulp = require("gulp");
+const htmlmin = require('gulp-htmlmin');
 var merge = require('merge-stream');
 const nunjucksRender = require("gulp-nunjucks-render");
 const sourceStream = require("vinyl-source-stream");
@@ -41,10 +42,11 @@ gulp.task("html", () => {
         .pipe(nunjucksRender({
             path: sharedTemplates,
             envOptions: {
-                trimBlocks: true,
-                lstripBlocks: true,
                 noCache: true
             }
+        }))
+        .pipe(htmlmin({
+            collapseWhitespace: true
         }))
         .pipe(gulp.dest(dest));
 });
