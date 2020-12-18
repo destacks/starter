@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/destacks/starter/tree/main/t1/v1#readme",
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "nunjucks": "^3.2.2"
   }
 }
