@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Destacks starter, type 1, variant 1",
   "scripts": {
-    "build": "bash scripts/build.sh",
+    "build": "gulp build",
     "dev": "node scripts/dev.js",
     "start": "bash scripts/start.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/destacks/starter/tree/main/t1/v1#readme",
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-nunjucks-render": "^2.2.3",
     "live-server": "^1.2.1",
     "nodemon": "^2.0.6",
     "normalize.css": "^8.0.1",
