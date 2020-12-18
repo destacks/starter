@@ -27,5 +27,3 @@ gulp.task("build", gulp.parallel(
     "html",
     "js"
 ));
-
-module.exports = gulp;
