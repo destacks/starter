@@ -121,3 +121,6 @@ dist
 # IDEs
 .vscode/
 .idea/
+
+# Ignore
+public/

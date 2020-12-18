@@ -1,9 +1,9 @@
-{% extends "_base.html" %}
+{% extends "_base.njk" %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Home</h1>
+    <h1>Home</h1>
 
-<p>Hello, world!</p>
+    <p>{{ greeting }}</p>
 {% endblock %}

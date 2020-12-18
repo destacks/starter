@@ -2,7 +2,7 @@ var liveServer = require("live-server");
 
 var params = {
     port: 8181,
-    root: "./src",
+    root: "./public",
     file: "index.html",
 };
 liveServer.start(params);
