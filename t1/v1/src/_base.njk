@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Destacks Starter | {% block title %}Home{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        {% block header %}
+        <a href="./">Home</a> | <a href="./about/">About</a>
+        {% endblock %}
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        <p><a href="https://www.destacks.com/">Destacks</a>, 2020</p>
+        {% endblock %}
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
