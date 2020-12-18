@@ -1,10 +1,19 @@
+"use strict";
+
 const fs = require("fs");
 const path = require("path");
 
-const gulp = require("gulp");
+const browserify = require("browserify");
+const buffer = require("vinyl-buffer");
 const data = require("gulp-data");
 const del = require("del");
+const glob = require("glob");
+const gulp = require("gulp");
+var merge = require('merge-stream');
 const nunjucksRender = require("gulp-nunjucks-render");
+const sourceStream = require("vinyl-source-stream");
+const sourcemaps = require("gulp-sourcemaps");
+const uglify = require("gulp-uglify");
 
 const src = "src/"
 const dest = "public";
@@ -41,8 +50,21 @@ gulp.task("html", () => {
 });
 
 gulp.task("js", () => {
-    return gulp.src(`${src}**/*.js`)
-        .pipe(gulp.dest(dest));
+    const files = glob.sync(`${src}**/*.js`);
+    return merge(files.map(function (file) {
+        return browserify({
+                entries: file
+            })
+            .bundle()
+            .pipe(sourceStream(file.replace(/src\//, "")))
+            .pipe(buffer())
+            .pipe(sourcemaps.init({
+                loadMaps: false
+            }))
+            .pipe(uglify())
+            .pipe(sourcemaps.write('./'))
+            .pipe(gulp.dest(dest))
+    }));
 });
 
 gulp.task("css", () => {
