@@ -1,0 +1,23 @@
+{
+  "name": "@destacks/starter-t1-v1",
+  "version": "0.0.0",
+  "description": "Destacks starter, type 1, variant 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/destacks/starter.git"
+  },
+  "keywords": [
+    "starter",
+    "template"
+  ],
+  "author": "Alexis Michaltsis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/destacks/starter/issues"
+  },
+  "homepage": "https://github.com/destacks/starter#readme"
+}
