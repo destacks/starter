@@ -4,9 +4,9 @@
   "description": "Destacks starter, type 1, variant 1",
   "main": "index.js",
   "scripts": {
-    "dev": "node dev.js",
+    "dev": "node scripts/dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "update": "cp node_modules/normalize.css/normalize.css src/shared/css/"
+    "update": "bash scripts/update.sh"
   },
   "repository": {
     "type": "git",
