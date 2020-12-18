@@ -5,6 +5,7 @@ const path = require("path");
 
 const browserify = require("browserify");
 const buffer = require("vinyl-buffer");
+const cleanCSS = require('gulp-clean-css');
 const data = require("gulp-data");
 const del = require("del");
 const glob = require("glob");
@@ -60,17 +61,18 @@ gulp.task("js", () => {
             .bundle()
             .pipe(sourceStream(file.replace(/src\//, "")))
             .pipe(buffer())
-            .pipe(sourcemaps.init({
-                loadMaps: false
-            }))
+            .pipe(sourcemaps.init())
             .pipe(uglify())
-            .pipe(sourcemaps.write('./'))
+            .pipe(sourcemaps.write("./"))
             .pipe(gulp.dest(dest))
     }));
 });
 
 gulp.task("css", () => {
-    return gulp.src(`${src}**/*.css`)
+    return gulp.src(`${src}**/index.css`)
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS())
+        .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(dest));
 });
 
